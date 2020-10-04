@@ -19,6 +19,6 @@ mkdir -p system-info
 nix-shell --run "sudo blkid '${device}p1' -sUUID -ovalue" > system-info/boot-uuid
 nix-shell --run "sudo blkid '${device}p2' -sUUID -ovalue" > system-info/root-uuid
 
-#nix-build
-#nixos-install --system $(readlink result)
+nix-build
+nixos-install --system $(readlink result)
 
