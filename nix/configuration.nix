@@ -15,7 +15,7 @@ in
   # Tell the host system that it can, and should, build for aarch64.
   nixpkgs = rec {
     inherit crossSystem;
-    localSystem = crossSystem;
+    localSystem.system = builtins.currentSystem;
   };
 
   fileSystems = {
